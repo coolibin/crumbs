@@ -1,4 +1,4 @@
-object _1_JsonDecoding {
+object _1_JsonDecoding extends App {
 
   import io.circe._
   import io.circe.parser._
