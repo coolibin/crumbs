@@ -1,18 +1,12 @@
 
 version := "1.0.0-SNAPSHOT"
-
 organization := "coolibin"
-
 scalaVersion := "2.12.15"
 
-libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.2.3"
-)
-
-
-
-
-lazy val circe = project
+lazy val practice = project
   .settings(
-    libraryDependencies ++= Dependencies.circeDependencies
+    libraryDependencies ++= Seq(
+      "org.testng" % "testng" % "7.7.1",
+      "org.scalatest" %% "scalatest" % "3.2.3"
+    )
   )

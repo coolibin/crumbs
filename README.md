@@ -1,2 +1,3 @@
 # crumbs
-Scala code examples
+Some Scala code practice examples
+
