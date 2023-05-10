@@ -7,11 +7,10 @@ import java.util.HashSet;
 import static org.testng.Assert.assertEquals;
 
 /**
- * Given an array of integers
- * finds the length of the longest sequence of non-repeated digits
+ * For a given array of integers find the length of the longest sequence of non-repeated digits
  * [5,2,2,6,8,1,3,10,2] -> [2,6,8,1,3,10] -> 6
  */
-public class JavaSolutionWithSet {
+public class TestMaxLenOfDistinctSequenceWithSet {
 
     private static int findLenOfSeq(int[] array) {
         if (array == null) {
