@@ -1,9 +1,10 @@
 package stringreverse;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNull;
+import $.JavaTest;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-public class JavaSolution2 {
+public class TestStringReversTR extends JavaTest {
 
     // tail-recursion
     private static String recursively(String toSort, String sorted) {
@@ -23,10 +24,19 @@ public class JavaSolution2 {
         return recursively(str, "");
     }
 
-    public static void main(String[] args) {
-        System.out.println(reversed("abcd"));
-        assertEquals(reversed("abcd"), "dcba", "abcd");
-        assertEquals(reversed(""), "");
-        assertNull(reversed(null), "null");
+
+    @Test
+    void test1() {
+        Assert.assertEquals(reversed("abcd"), "dcba", "abcd");
+    }
+
+    @Test
+    void test2() {
+        Assert.assertEquals(reversed(""), "");
+    }
+
+    @Test
+    void test3() {
+        Assert.assertNull(reversed(null), "null");
     }
 }

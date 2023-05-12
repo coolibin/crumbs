@@ -1,8 +1,8 @@
 package slidingwindowmax;
 
+import $.JavaTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertEquals;
 
 /**
  * You are given an array of integers {{nums}}, there is a sliding window of size {{k}}
@@ -21,7 +21,7 @@ import static org.testng.Assert.assertEquals;
  */
 
 
-public class Solution1 {
+public class TestSlidingWindowMax extends JavaTest {
 
     // Complexity O(N*K)
 
@@ -39,11 +39,12 @@ public class Solution1 {
     }
 
     @Test
-    private void test1() {
-        assertEquals(maxOfFrames(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3), new int[]{3, 3, 5, 5, 6, 7});
+    void test1() {
+        Assert.assertEquals(maxOfFrames(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3), new int[]{3, 3, 5, 5, 6, 7});
     }
+
     @Test
-    private void test2() {
-        assertEquals(maxOfFrames(new int[]{1}, 1), new int[]{1});
+    void test2() {
+        Assert.assertEquals(maxOfFrames(new int[]{1}, 1), new int[]{1});
     }
 }

@@ -1,5 +1,6 @@
 package findmaxlenofdistseq;
 
+import $.JavaTest;
 import org.testng.annotations.Test;
 
 import java.util.HashSet;
@@ -10,7 +11,8 @@ import static org.testng.Assert.assertEquals;
  * For a given array of integers find the length of the longest sequence of non-repeated digits
  * [5,2,2,6,8,1,3,10,2] -> [2,6,8,1,3,10] -> 6
  */
-public class TestMaxLenOfDistinctSequenceWithSet {
+public class TestMaxLenOfDistinctSequenceWithSet
+        extends JavaTest {
 
     private static int findLenOfSeq(int[] array) {
         if (array == null) {
@@ -20,7 +22,7 @@ public class TestMaxLenOfDistinctSequenceWithSet {
             for (int i = 0; i < array.length; i++) {
                 // move the starting position in a loop
                 // and for each item calculate the length of the maximum subset before it repeats
-                HashSet<Integer> found = new HashSet<Integer>();
+                HashSet<Integer> found = new HashSet<>();
                 for (int j = i; j < array.length; j++) {
                     if (found.contains(array[j])) {
                         break;

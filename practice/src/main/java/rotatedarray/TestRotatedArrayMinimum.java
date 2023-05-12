@@ -1,5 +1,6 @@
 package rotatedarray;
 
+import $.JavaTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import scala.Tuple2;
@@ -7,14 +8,15 @@ import scala.Tuple2;
 import java.security.InvalidParameterException;
 import java.util.Arrays;
 
-public class TestSolution {
+public class TestRotatedArrayMinimum extends JavaTest {
 
     private Tuple2<int[], int[]> split(int[] a) {
         int mid = a.length / 2;
-        var left = Arrays.copyOfRange(a,0, mid);
+        var left = Arrays.copyOfRange(a, 0, mid);
         var right = Arrays.copyOfRange(a, mid, a.length);
         return new Tuple2<>(left, right);
     }
+
     private int findMinimum(int[] array) {
         if (array.length == 0) {
             throw new InvalidParameterException("array cannot be empty!");
@@ -35,17 +37,17 @@ public class TestSolution {
     }
 
     @Test
-    private void test1() {
+    void test1() {
         Assert.assertEquals(findMinimum(new int[]{3, 4, 5, 6, 7, 1, 2}), 1);
     }
+
     @Test
-    private void test2() {
-        Assert.assertEquals(findMinimum(new int[]{7,8, 1, 2, 3, 4, 5, 6}), 1);
+    void test2() {
+        Assert.assertEquals(findMinimum(new int[]{7, 8, 1, 2, 3, 4, 5, 6}), 1);
     }
+
     @Test
-    private void test3() {
+    void test3() {
         Assert.assertEquals(findMinimum(new int[]{0}), 0);
     }
-
-
 }
