@@ -1,14 +1,15 @@
 package findpair;
 
-import static org.testng.Assert.assertEquals;
+import $.JavaTest;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /**
  * Given a sorted array of integers and the value
  * find the first found two elements that gives the value
  * ([3,5,10, 20], 15) -> [5,10]
  */
-public class JavaSolution2 {
-
+public class TestFindPairWithTwoPointers extends JavaTest {
 
     // Solution with two pointers
     private static int[] findPair(int[] sortedArray, int total) {
@@ -26,12 +27,21 @@ public class JavaSolution2 {
                 left = left + 1;
             }
         }
-        return new int[] {};
+        return new int[]{};
     }
 
-    public static void main(String[] args) {
-        assertEquals(findPair(new int[]{3, 5, 10, 20}, 15), new int[]{5, 10});
-        assertEquals(findPair(new int[]{3, 5, 10, 20}, 30), new int[]{10, 20});
-        assertEquals(findPair(new int[]{3, 5, 10, 20}, 50), new int[]{});
+    @Test
+    void test1() {
+        Assert.assertEquals(findPair(new int[]{3, 5, 10, 20}, 15), new int[]{5, 10});
+    }
+
+    @Test
+    void test2() {
+        Assert.assertEquals(findPair(new int[]{3, 5, 10, 20}, 30), new int[]{10, 20});
+    }
+
+    @Test
+    void test3() {
+        Assert.assertEquals(findPair(new int[]{3, 5, 10, 20}, 50), new int[]{});
     }
 }

@@ -3,7 +3,7 @@ package stringreverse;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNull;
 
-public class JavaSolution1 {
+public class TestStringReverseNoTR {
 
     // no tail recursion
     private static String reversed(String str) {
