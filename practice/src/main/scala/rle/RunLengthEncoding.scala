@@ -17,6 +17,10 @@ import scala.annotation.tailrec
 
 class RunLengthEncoding
   extends FunSuite {
+
+  /**
+   * Complexity: O(N)
+   */
   def rle(list: List[Char]): List[(Char, Int)] = {
     @tailrec
     def recursively(remaining: List[Char], current: (Char, Int), accumulator: List[(Char, Int)]): List[(Char, Int)] = {
