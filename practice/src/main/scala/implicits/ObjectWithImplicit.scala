@@ -2,7 +2,7 @@ package implicits
 
 object ObjectWithImplicit {
 
-  implicit val otherObject = ImplicitHolder("otherObject")
+  implicit val otherObject: ImplicitHolder = ImplicitHolder("otherObject")
 
 
 }
