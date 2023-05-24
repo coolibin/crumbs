@@ -22,15 +22,15 @@ class TestNumberProblems
   }
 
   test("6 = 2*3") {
-    NumberProblems.decompose(6) should contain theSameElementsAs (List(2, 3))
+    NumberProblems.decompose(6) should contain theSameElementsAs List(2, 3)
   }
 
   test("54 = 3*3*3*2") {
-    NumberProblems.decompose(54) should contain theSameElementsAs (List(3, 3, 3, 2))
+    NumberProblems.decompose(54) should contain theSameElementsAs List(3, 3, 3, 2)
   }
 
   test("128 = 2*2*2*2*2*2*2") {
-    NumberProblems.decompose(128) should contain theSameElementsAs (List(2, 2, 2, 2, 2, 2, 2))
+    NumberProblems.decompose(128) should contain theSameElementsAs List(2, 2, 2, 2, 2, 2, 2)
   }
 
 
