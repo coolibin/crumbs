@@ -98,6 +98,7 @@ case class BNode[+T](val value: T, val left: BTree[T], val right: BTree[T]) exte
   val size: Int = 1 + left.size + right.size
 
   def collectLeaves2: List[BTree[T]] = {
+    @tailrec
     def recursively(todo: List[BTree[T]], result: List[BTree[T]]): List[BTree[T]] = {
       if (todo.isEmpty) {
         result
@@ -276,13 +277,13 @@ class TestBinaryTree extends FunSuite {
     )
   )
   test("collectLeaves2") {
-    tree.collectLeaves.map(_.value) should contain theSameElementsAs (List(8, 7, 5, 3))
+    tree.collectLeaves.map(_.value) should contain theSameElementsAs List(8, 7, 5, 3)
   }
 
-  test("collectNodes(0)")(tree.collectNodes(0).map(_.value) should contain theSameElementsAs (List(1)))
-  test("collectNodes(1)")(tree.collectNodes(1).map(_.value) should contain theSameElementsAs (List(2, 6)))
-  test("collectNodes(2)")(tree.collectNodes(2).map(_.value) should contain theSameElementsAs (List(3, 4, 7, 8)))
-  test("collectNodes(3)")(tree.collectNodes(3).map(_.value) should contain theSameElementsAs (List(5)))
+  test("collectNodes(0)")(tree.collectNodes(0).map(_.value) should contain theSameElementsAs List(1))
+  test("collectNodes(1)")(tree.collectNodes(1).map(_.value) should contain theSameElementsAs List(2, 6))
+  test("collectNodes(2)")(tree.collectNodes(2).map(_.value) should contain theSameElementsAs List(3, 4, 7, 8))
+  test("collectNodes(3)")(tree.collectNodes(3).map(_.value) should contain theSameElementsAs List(5))
   test("tree.toList")(tree.toList shouldBe List(1, 2, 3, 4, 5, 6, 7, 8))
   test("tree.toListPerLevel")(tree.toListPerLevel shouldBe List(1, 2, 6, 3, 4, 7, 8, 5))
 }
