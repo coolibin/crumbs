@@ -9,12 +9,6 @@ object AdHocPolymorphism {
   private object Adder {
     def sum[T: Adder](a: T, b: T): T = implicitly[Adder[T]].sum(a, b)
 
-    // implicit conversion from T to Adder[T]:
-
-    //    implicit val int2Adder: Adder[Int] = new Adder[Int] {
-    //      override def sum(a: Int, b: Int): Int = a + b
-    //    }
-
     implicit val int2Adder: Adder[Int] = (a: Int, b: Int) => a + b
     /**
      * This is equivalent to:
