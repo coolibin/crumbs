@@ -1,10 +1,12 @@
+package adhocpolymorphism
+
 object AdHocPolymorphism {
 
   trait Adder[T] {
     def sum(a: T, b: T): T
   }
 
-  object Adder {
+  private object Adder {
     def sum[T: Adder](a: T, b: T): T = implicitly[Adder[T]].sum(a, b)
 
     // implicit conversion from T to Adder[T]:
