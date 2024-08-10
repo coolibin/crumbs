@@ -4,7 +4,7 @@ object Example1 {
 
   /**
    * Given different types of input, we want to process them differently.
-   * Wile using the same method name, for each type of input,
+   * While using the same method name, for each type of input,
    * we have a different type of output.
    */
 
