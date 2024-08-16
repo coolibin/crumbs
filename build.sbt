@@ -1,7 +1,7 @@
 
 version := "1.0.0-SNAPSHOT"
 organization := "coolibin"
-scalaVersion := "2.12.15"
+scalaVersion := "2.13.12"
 
 lazy val practice = project
   .settings(

@@ -1,6 +1,6 @@
 package multithreading.javalike
 
-object ProducerConsumerWithWait {
+object _1_ProducerConsumerNaive {
 
   class SimpleContainer {
     private var value: Int = 0
@@ -16,23 +16,21 @@ object ProducerConsumerWithWait {
   def main(args: Array[String]): Unit = {
     val container = new SimpleContainer
     val consumer = new Thread(() => {
-      println("[consumer] passively waiting...")
-      container.synchronized {
-        container.wait() // no busy waiting
+      println("[consumer] actively waiting ! ...")
+      while (container.isEmpty) {
+        // this waiting is a waste
+        // of the resources
+        println("[consumer] actively waiting...")
       }
-      // at this point the container must have some value
       println(s"[consumer] I have consumed ${container.get}")
     })
 
     val producer = new Thread(() => {
       println("[producer] computing...")
-      Thread.sleep(2000)
+      Thread.sleep(500)
       val value = 42
-      container.synchronized {
-        println(s"[producer] I have produced, after long work, the value $value")
-        container.set(value)
-        container.notify() // signal to consumer thread to wake up
-      }
+      println(s"[producer] I have produced, after long work, the value $value")
+      container.set(value)
     })
 
     consumer.start()
