@@ -21,6 +21,15 @@ lazy val `design-patterns` = project
     )
   )
 
+lazy val `test-tools` = project
+  .settings(
+    libraryDependencies ++= Seq(
+      "org.testng" % "testng" % "7.7.1",
+      "org.scalatest" %% "scalatest" % "3.2.3",
+      "org.slf4j" % "slf4j-simple" % "1.7.36"
+    )
+  )
+
 lazy val `warski-di` = project
   .settings(
     libraryDependencies ++= Seq(
