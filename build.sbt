@@ -6,27 +6,34 @@ scalaVersion := "2.13.12"
 lazy val practice = project
   .settings(
     libraryDependencies ++= Seq(
-      "org.testng" % "testng" % "7.7.1",
-      "org.scalatest" %% "scalatest" % "3.2.3",
-      "org.slf4j" % "slf4j-simple" % "1.7.36"
+      Dependencies.testng,
+      Dependencies.scalatest,
+      Dependencies.`slf4j-simple`
     )
   )
 
 lazy val `design-patterns` = project
   .settings(
     libraryDependencies ++= Seq(
-      "org.testng" % "testng" % "7.7.1",
-      "org.scalatest" %% "scalatest" % "3.2.3",
-      "org.slf4j" % "slf4j-simple" % "1.7.36"
+      Dependencies.testng,
+      Dependencies.scalatest,
+      Dependencies.`slf4j-simple`
+    )
+  )
+
+lazy val snippets = project
+  .settings(
+    libraryDependencies ++= Seq(
+      Dependencies.scalatest,
+      Dependencies.`slf4j-simple`
     )
   )
 
 lazy val `test-tools` = project
   .settings(
     libraryDependencies ++= Seq(
-      "org.testng" % "testng" % "7.7.1",
-      "org.scalatest" %% "scalatest" % "3.2.3",
-      "org.slf4j" % "slf4j-simple" % "1.7.36"
+      Dependencies.scalatest,
+      Dependencies.`slf4j-simple`
     )
   )
 
