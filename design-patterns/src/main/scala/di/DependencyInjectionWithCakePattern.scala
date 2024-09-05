@@ -15,29 +15,21 @@ object DependencyInjectionWithCakePattern extends App {
     def action(x: Int): String
   }
 
-  trait ScalaDependentComponent {
-    self: ScalaComponent =>
-    def dependentAction(x: Int): String
+  trait ScalaDependentComponent { self: ScalaComponent =>
+    def dependentAction(x: Int): String = action(x) + " this rocks!"
   }
 
-  trait ScalaApplication {
-    self: ScalaDependentComponent =>
-    def appAction(x: Int): Unit
-  }
+  trait ScalaApplication { self: ScalaDependentComponent => }
 
-  trait ConcreteComponent extends ScalaComponent {
-    override def action(x: Int): String = " ConcreteComponent "
-  }
+  // layer1 - small components
+  trait Picture extends ScalaComponent { def showPicture(): Unit = ??? }
+  trait Stats extends ScalaComponent { def showStats(): Unit = ??? }
 
-  trait ConcreteDependentComponent extends ScalaDependentComponent with ConcreteComponent{
-    override def dependentAction(x: Int): String = action(x) + " ConcreteDependentComponent "
-  }
+  // layer2 - compose
+  trait Profile extends ScalaDependentComponent with Picture
+  trait Analytics extends ScalaDependentComponent with Stats
 
-  trait ConcreteApp extends ScalaApplication with ConcreteDependentComponent{
-    def appAction(x: Int): Unit = println(dependentAction(x) + " ConcreteApp ")
-  }
+  // layer3 - app
+  trait AnalyticsApp extends ScalaApplication with Analytics
 
-  object ConcreteApp extends ConcreteApp
-
-  ConcreteApp.appAction(10)
 }
