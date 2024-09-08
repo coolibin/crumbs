@@ -1,5 +1,7 @@
-{
-  "name": "Alex",
-  "age": 30,
-  "eyeColor": "green"
-}
+[
+  {
+    "name": "Alex",
+    "age": 30,
+    "eyeColor": "green"
+  }
+]
