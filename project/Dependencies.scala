@@ -13,6 +13,9 @@ object Dependencies {
 
   lazy val circeDependencies: Seq[ModuleID] = Seq(circe_generic, circe_yaml, circe_parser)
 
-  lazy val testng =  "org.testng" % "testng" % "7.7.1"
-  lazy val scalatest =  "org.scalatest" %% "scalatest" % "3.2.3"
+  lazy val testng = "org.testng" % "testng" % "7.7.1"
+  lazy val scalatest = "org.scalatest" %% "scalatest" % "3.2.3"
+
+  lazy val sparkCore = "org.apache.spark" %% "spark-core" % "3.5.2"
+  lazy val sparkSql = "org.apache.spark" %% "spark-sql" % "3.5.2"
 }

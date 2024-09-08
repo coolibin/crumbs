@@ -29,6 +29,14 @@ lazy val snippets = project
     )
   )
 
+lazy val `spark-sandbox` = project
+  .settings(
+    libraryDependencies ++= Seq(
+      Dependencies.sparkCore,
+      Dependencies.sparkSql,
+    )
+  )
+
 lazy val `test-tools` = project
   .settings(
     libraryDependencies ++= Seq(
