@@ -13,6 +13,7 @@ object Spark0 {
     val firstDF = spark.read
       .format("json")
       .option("inferSchema", "true")
+      .option("multiline","true")
       .load(this.getClass.getResource("/first.json").getPath)
 
     firstDF.show()
