@@ -34,6 +34,8 @@ lazy val `spark-sandbox` = project
     libraryDependencies ++= Seq(
       Dependencies.sparkCore,
       Dependencies.sparkSql,
+      Dependencies.`slf4j-simple`,
+      Dependencies.logback_classic,
     )
   )
 

@@ -7,6 +7,7 @@ object Dependencies {
   }
 
   lazy val `slf4j-simple` = "org.slf4j" % "slf4j-simple" % "1.7.36"
+  lazy val logback_classic = "ch.qos.logback" % "logback-classic" % "1.1.7"
   lazy val circe_generic = "io.circe" %% "circe-generic" % Versions.circe
   lazy val circe_yaml = "io.circe" %% "circe-yaml" % Versions.circe
   lazy val circe_parser = "io.circe" %% "circe-parser" % Versions.circe
