@@ -32,11 +32,16 @@ lazy val snippets = project
 
 lazy val `spark-sandbox` = project
   .settings(
+    resolvers ++= Seq(
+      "Artifactory" at "https://artifactory.natera.com/artifactory/sbt-local/releases/",
+      Resolver.mavenLocal,
+    ),
     libraryDependencies ++= Seq(
       Dependencies.sparkCore,
       Dependencies.sparkSql,
       Dependencies.`slf4j-simple`,
       Dependencies.logback_classic,
+      Dependencies.oracle,
     )
   )
 
