@@ -4,6 +4,17 @@ organization := "coolibin"
 scalaVersion := "2.13.12"
 name := "crumbs"
 
+lazy val `akka-typed` = project
+  .settings(
+    libraryDependencies ++= Seq(
+      Dependencies.testng,
+      Dependencies.scalatest,
+      //Dependencies.`slf4j-simple`,
+      Dependencies.logback_classic,
+      Dependencies.`akka-typed`,
+    )
+  )
+
 lazy val practice = project
   .settings(
     libraryDependencies ++= Seq(

@@ -5,6 +5,7 @@ object Dependencies {
   object Versions {
     lazy val circe = "0.14.2"
     lazy val oracle = "12.1"
+    lazy val `akka-typed` = "2.6.19"
   }
 
   lazy val config = "com.typesafe" % "config" % "1.4.3"
@@ -25,4 +26,6 @@ object Dependencies {
   lazy val sparkSql = "org.apache.spark" %% "spark-sql" % "3.5.2"
 
   lazy val seleniumJava = "org.seleniumhq.selenium" % "selenium-java" % "3.141.59"
+
+  lazy val `akka-typed` = "com.typesafe.akka" %% "akka-actor-typed" % Versions.`akka-typed`
 }
