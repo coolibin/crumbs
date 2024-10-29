@@ -15,6 +15,18 @@ lazy val `akka-typed` = project
     )
   )
 
+lazy val `akka-streams` = project
+  .settings(
+    libraryDependencies ++= Seq(
+      Dependencies.testng,
+      Dependencies.scalatest,
+      //Dependencies.`slf4j-simple`,
+      Dependencies.logback_classic,
+      Dependencies.`akka-stream`,
+      Dependencies.`akka-stream-testkit`,
+    )
+  )
+
 lazy val practice = project
   .settings(
     libraryDependencies ++= Seq(

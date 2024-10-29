@@ -28,4 +28,8 @@ object Dependencies {
   lazy val seleniumJava = "org.seleniumhq.selenium" % "selenium-java" % "3.141.59"
 
   lazy val `akka-typed` = "com.typesafe.akka" %% "akka-actor-typed" % Versions.`akka-typed`
+
+  lazy val `akka-stream` = "com.typesafe.akka" %% "akka-stream" % "2.6.19"
+  lazy val `akka-stream-typed` = "com.typesafe.akka" %% "akka-stream-typed" % "2.6.19"
+  lazy val `akka-stream-testkit` = "com.typesafe.akka" %% "akka-stream-testkit" % "2.6.19"
 }
