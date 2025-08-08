@@ -4,7 +4,7 @@ object Dependencies {
 
   object Versions {
     lazy val circe = "0.14.2"
-    lazy val oracle = "12.1"
+    lazy val oracle = "12.2.0.1" //"12.1"
     lazy val `akka-typed` = "2.6.19"
   }
 
@@ -15,7 +15,7 @@ object Dependencies {
   lazy val circe_generic = "io.circe" %% "circe-generic" % Versions.circe
   lazy val circe_yaml = "io.circe" %% "circe-yaml" % Versions.circe
   lazy val circe_parser = "io.circe" %% "circe-parser" % Versions.circe
-  lazy val oracle = "com.oracle" % "ojdbc7" % Versions.oracle
+  lazy val oracle = "com.oracle.database.jdbc" % "ojdbc8" % Versions.oracle
 
   lazy val circeDependencies: Seq[ModuleID] = Seq(circe_generic, circe_yaml, circe_parser)
 
